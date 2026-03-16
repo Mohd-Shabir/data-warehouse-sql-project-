@@ -9,7 +9,7 @@
 
 ## 🏗️ Architecture
 
-
+![Data Architecture](docs/data_architecture.png)
 
 The project follows **Medallion Architecture** with three distinct layers:
 
