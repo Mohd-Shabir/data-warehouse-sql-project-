@@ -88,6 +88,7 @@ Business-ready data modeled into a star schema for reporting and analysis.
 ---
 
 📂 Repository Structure
+'''
 data-warehouse-sql-project/
 │
 ├── datasets/
@@ -115,5 +116,5 @@ data-warehouse-sql-project/
 │
 ├── LICENSE
 └── README.md
-
+'''
 ---
