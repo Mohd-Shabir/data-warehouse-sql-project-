@@ -17,15 +17,12 @@ The project follows **Medallion Architecture** with three distinct layers:
 - **Silver Layer** — Cleansed, standardized, and normalized data
 - **Gold Layer** — Business-ready star schema optimized for analytics
 
+---
+
 ## 🔄 Data Flow & Layer Process
-
-![Layer Process](docs/layer_process.png)
-
 ![Data Flow](docs/data_flow.png)
 
-- **Bronze Layer** — Raw data ingested as-is from source systems (ERP & CRM)
-- **Silver Layer** — Cleansed, standardized, and normalized data
-- **Gold Layer** — Business-ready star schema optimized for analytics
+![Layer Process](docs/layer_process.png)
 
 ---
 
@@ -54,6 +51,7 @@ This project simulates a real-world data warehouse workflow, covering:
 > three separate databases are used (bronze, silver, gold) to achieve
 > the same logical layer separation.
 
+---
 
 ## 🚀 Layer Breakdown
 
@@ -82,10 +80,40 @@ Cleansed and standardized the raw bronze data, making it reliable and consistent
 Business-ready data modeled into a star schema for reporting and analysis.
 
 ![Data Model](docs/data_model.png)
-
 - Explore business objects | Understand how silver tables connect across CRM and ERP |
 - Build dimensions | `dim_customers` (CRM + ERP joined) · `dim_products` (CRM + ERP joined) |
 - Build fact table | `fact_sales` — transactional records with all foreign keys |
 - Validate integration | Check row counts, join integrity, no orphaned keys | Data model diagram
 
+---
 
+📂 Repository Structure
+data-warehouse-sql-project/
+│
+├── datasets/
+│   ├── source_crm/                    # Raw CRM CSV files
+│   └── source_erp/                    # Raw ERP CSV files
+│
+├── docs/
+│   ├── data_architecture.png          # Medallion architecture diagram
+│   ├── data_architecture.pdf
+│   ├── data_catalog.pdf               # Field descriptions and metadata
+│   ├── data_flow.png                  # Data lineage across all layers
+│   ├── data_layers_table.pdf          # Layer specifications reference
+│   ├── data_model.png                 # Gold layer star schema diagram
+│   ├── layer_process.png              # Step-by-step layer process diagram
+│   └── naming_conventions.pdf        # Naming standards for tables and columns
+│
+├── scripts/                           # SQL scripts for ETL and transformations
+│   ├── bronze/                        # Scripts for extracting and loading raw data
+│   ├── silver/                        # Scripts for cleaning and transforming data
+│   └── gold/                          # Scripts for creating analytical models
+│
+├── tests/
+│   ├── quality_checks_silver.sql      # Silver layer data quality validation
+│   └── quality_checks_gold.sql        # Gold layer data quality validation
+│
+├── LICENSE
+└── README.md
+
+---
